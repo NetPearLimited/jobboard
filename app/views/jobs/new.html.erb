@@ -1,0 +1,19 @@
+<%= turbo_frame_tag "form" do %>
+ 
+ <%= form_tag new_job_path, method: :get, data: { controller: "dropdown", action: "change->dropdown#submit" } do %>
+ <%= select_tag  :category, options_from_collection_for_select(@categories, "id", "name", @category&.id ), prompt:  "Select a category" %>
+ <%= select_tag  :subcategories, options_from_collection_for_select(@subcategories, "id" , "name", @category&.id), prompt:  "Select a subcategories category" %>
+ <%= select_tag  :subsubcategories, options_from_collection_for_select(@subsubcategories, "id" , "name", @category&.id), prompt:  "Select a subsubcategories category" %>
+
+ 
+  <% end %>
+ 
+
+ 
+
+
+
+
+
+ <% end %>
+  
